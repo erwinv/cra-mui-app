@@ -1,25 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Container,
+  keyframes,
+  Link,
+  Stack,
+  Typography,
+} from '@mui/material'
+
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth='xs'>
+      <Stack>
+        <Card>
+          <CardMedia
+            component='img'
+            image='/logo.svg'
+            alt='logo'
+            sx={{
+              animation: `${spin} infinite 20s linear`
+            }}
+          />
+          <CardContent>
+            <Typography>
+              Edit <code>src/App.tsx</code> and save to reload.
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button
+              component={Link}
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn React
+            </Button>
+          </CardActions>
+        </Card>
+      </Stack>
+    </Container>
   );
 }
 
