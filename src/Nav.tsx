@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { BottomNavigation, BottomNavigationAction, Paper } from "@mui/material"
+import { BottomNavigation, BottomNavigationAction, Paper, Link } from "@mui/material"
 import { Home } from '@mui/icons-material'
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 import { Icon } from '@mui/material'
 
 function Nav() {
@@ -16,8 +16,8 @@ function Nav() {
           setPage(newValue)
         }}
       >
-        <BottomNavigationAction label="Home" icon={<Home />} component={Link} to="/" />
-        <BottomNavigationAction label="Firebase" icon={<Icon>local_fire_department</Icon>} component={Link} to="firebase" />
+        <BottomNavigationAction label="Home" icon={<Home />} component={RouterLink} to="/" />
+        <BottomNavigationAction label="Firebase" icon={<Icon>local_fire_department</Icon>} component={RouterLink} to="firebase" />
       </BottomNavigation>
     </Paper>
   )
