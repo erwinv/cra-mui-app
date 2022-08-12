@@ -1,26 +1,13 @@
 import {
-  Button,
   Card,
-  CardActions,
   CardContent,
-  CardMedia,
   Container,
-  keyframes,
   Link,
   List,
   ListItem,
   Stack,
   Typography,
 } from '@mui/material'
-
-const spin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`
 
 function Landing() {
   const subdomains = {
@@ -36,35 +23,10 @@ function Landing() {
     <Container maxWidth='xs'>
       <Stack spacing={1}>
         <Card>
-          <CardMedia
-            component='img'
-            image='/logo.svg'
-            alt='logo'
-            sx={{
-              animation: `${spin} infinite 20s linear`
-            }}
-          />
-          <CardContent>
-            <Typography>
-              Edit <code>src/App.tsx</code> and save to reload.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button
-              component={Link}
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </Button>
-          </CardActions>
-        </Card>
-        <Card>
           <CardContent>
             <Typography variant='h4'>Links</Typography>
             <List>
-              {Object.entries(subdomains).map(([subdomain, label], i) => 
+              {Object.entries(subdomains).map(([subdomain, label], i) =>
                 <ListItem id={`subdomain-${i}`}>
                   <Link
                     href={`${proto}//${subdomain}.${domain}`}

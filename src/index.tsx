@@ -6,7 +6,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const theme = createTheme({ palette: { mode: 'dark' }})
+const theme = createTheme({ palette: { mode: 'light' }})
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
